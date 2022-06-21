@@ -12,7 +12,7 @@ import {
   Typography,
 } from "@mui/material";
 import { Menu, MusicNote } from "@mui/icons-material";
-import { Navigate, Route, Routes } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import { HomeView } from "./views/HomeView";
 import { GuessByLyrics } from "./views/GuessByLyrics";
 import { SideDrawer } from "./components/SideDrawer";
