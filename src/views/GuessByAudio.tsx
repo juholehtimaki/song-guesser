@@ -66,7 +66,7 @@ export const GuessByAudio: React.FC<{ gameData: AudioSong[] }> = ({
     audio.pause();
     setAudio(audioGameState[songIdx].audio);
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [songIdx, audio]);
+  }, [songIdx]);
 
   const handleAnswer = () => {
     const currState = _.cloneDeep(audioGameState);
