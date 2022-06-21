@@ -7,14 +7,7 @@ import {
   PlayCircle,
   StopCircle,
 } from "@mui/icons-material";
-import {
-  Box,
-  Button,
-  Card,
-  IconButton,
-  TextField,
-  Typography,
-} from "@mui/material";
+import { Box, Button, IconButton, TextField, Typography } from "@mui/material";
 import _ from "lodash";
 import s from "string-similarity";
 import "./../App.css";
@@ -105,73 +98,71 @@ export const GuessByAudio: React.FC<{ gameData: AudioSong[] }> = ({
 
   return (
     <Box className="App">
-      <Card sx={{ marginTop: "1em", padding: "1em" }}>
-        <Box sx={{ display: "flex", flexDirection: "column", gap: "1em" }}>
-          <Box>
-            {!playing && (
-              <IconButton
-                onClick={() => {
-                  audio.currentTime = 0;
-                  audio.play();
-                  setPlaying(true);
-                }}
-              >
-                <PlayCircle sx={{ fontSize: "5em" }} />
-              </IconButton>
-            )}
-            {playing && (
-              <IconButton
-                onClick={() => {
-                  audio.currentTime = 0;
-                  audio.pause();
-                  setPlaying(false);
-                }}
-              >
-                <StopCircle sx={{ fontSize: "5em" }} />
-              </IconButton>
-            )}
-          </Box>
-          <Box>{renderTextFieldOrMark()}</Box>
-          <Box>
+      <Box sx={{ display: "flex", flexDirection: "column", gap: "1em" }}>
+        <Box>
+          {!playing && (
             <IconButton
-              onClick={() => setSongIdx(songIdx - 1)}
-              disabled={songIdx === 0}
+              onClick={() => {
+                audio.currentTime = 0;
+                audio.play();
+                setPlaying(true);
+              }}
             >
-              <ArrowBack />
+              <PlayCircle sx={{ fontSize: "5em" }} />
             </IconButton>
-            <Button
-              onClick={handleAnswer}
-              variant="contained"
-              disabled={guess.length === 0}
-            >
-              Arvaa
-            </Button>
+          )}
+          {playing && (
             <IconButton
-              onClick={() => setSongIdx(songIdx + 1)}
-              disabled={!canShowNextQuestion()}
+              onClick={() => {
+                audio.currentTime = 0;
+                audio.pause();
+                setPlaying(false);
+              }}
             >
-              <ArrowForward />
+              <StopCircle sx={{ fontSize: "5em" }} />
             </IconButton>
-          </Box>
+          )}
         </Box>
-        {audioGameState[songIdx].correct !== undefined && (
-          <Box sx={{ marginTop: "1em" }}>
-            <Typography
-              variant="h5"
-              sx={{ marginTop: "1em", marginBottom: "1em" }}
-            >{`${audioGameState[songIdx].artist} - ${audioGameState[songIdx].songName}`}</Typography>
-            <iframe
-              width="350"
-              height="200"
-              src={`https://www.youtube.com/embed/${audioGameState[songIdx].id}`}
-              frameBorder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-              title="Embedded youtube"
-            />
-          </Box>
-        )}
-      </Card>
+        <Box>{renderTextFieldOrMark()}</Box>
+        <Box>
+          <IconButton
+            onClick={() => setSongIdx(songIdx - 1)}
+            disabled={songIdx === 0}
+          >
+            <ArrowBack />
+          </IconButton>
+          <Button
+            onClick={handleAnswer}
+            variant="contained"
+            disabled={guess.length === 0}
+          >
+            Arvaa
+          </Button>
+          <IconButton
+            onClick={() => setSongIdx(songIdx + 1)}
+            disabled={!canShowNextQuestion()}
+          >
+            <ArrowForward />
+          </IconButton>
+        </Box>
+      </Box>
+      {audioGameState[songIdx].correct !== undefined && (
+        <Box sx={{ marginTop: "1em" }}>
+          <Typography
+            variant="h5"
+            sx={{ marginTop: "1em", marginBottom: "1em" }}
+          >{`${audioGameState[songIdx].artist} - ${audioGameState[songIdx].songName}`}</Typography>
+          <iframe
+            width="350"
+            height="200"
+            src={`https://www.youtube.com/embed/${audioGameState[songIdx].id}`}
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+            title="Embedded youtube"
+          />
+        </Box>
+      )}
       <Box sx={{ height: "64px" }}></Box>
       <ScoreBar score={rightGuesses} totalScore={totalGuesses} />
     </Box>

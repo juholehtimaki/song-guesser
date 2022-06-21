@@ -90,6 +90,16 @@ export const SideDrawer: React.FC<{
                 Haloo Helsinki!
               </ListItemButton>
             </ListItem>
+            <ListItem disablePadding>
+              <ListItemButton
+                onClick={() => {
+                  setDrawerOpen(false);
+                  navigate("/missing-lyrics/haloo-helsinki");
+                }}
+              >
+                Haloo Helsinki! 2
+              </ListItemButton>
+            </ListItem>
           </List>
         </Box>
       </Drawer>

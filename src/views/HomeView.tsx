@@ -31,6 +31,16 @@ export const HomeView = () => {
           </ListItem>
         </List>
         <Typography variant="h6" sx={{ color: "#ffff", marginTop: "2em" }}>
+          Arvaa puuttuva sana
+        </Typography>
+        <List>
+          <ListItem style={{ display: "flex", justifyContent: "center" }}>
+            <Button onClick={() => navigate("/missing-lyrics/haloo-helsinki")}>
+              Haloo Helsinki!
+            </Button>
+          </ListItem>
+        </List>
+        <Typography variant="h6" sx={{ color: "#ffff", marginTop: "2em" }}>
           Melodian avulla arvattavat biisit
         </Typography>
         <List>

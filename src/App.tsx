@@ -17,6 +17,7 @@ import { HomeView } from "./views/HomeView";
 import { GuessByLyrics } from "./views/GuessByLyrics";
 import { SideDrawer } from "./components/SideDrawer";
 import { GuessByAudio } from "./views/GuessByAudio";
+import { GuessMissingWord } from "./views/GuessMissingWord";
 
 const darkTheme = responsiveFontSizes(
   createTheme({
@@ -60,6 +61,12 @@ function App() {
         <Route
           path="/lyrics/arttu-wiskari"
           element={<GuessByLyrics key="helsinki" gameData={arttuwiskari} />}
+        />
+        <Route
+          path="/missing-lyrics/haloo-helsinki"
+          element={
+            <GuessMissingWord key="helsinki-missing" gameData={haloohelsinki} />
+          }
         />
         <Route
           path="/audio/random"
