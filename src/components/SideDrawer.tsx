@@ -84,6 +84,16 @@ export const SideDrawer: React.FC<{
               <ListItemButton
                 onClick={() => {
                   setDrawerOpen(false);
+                  navigate("/missing-lyrics/arttu-wiskari");
+                }}
+              >
+                Arttu Wiskari 2
+              </ListItemButton>
+            </ListItem>
+            <ListItem disablePadding>
+              <ListItemButton
+                onClick={() => {
+                  setDrawerOpen(false);
                   navigate("/lyrics/haloo-helsinki");
                 }}
               >

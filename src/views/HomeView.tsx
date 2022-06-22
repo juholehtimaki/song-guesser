@@ -40,6 +40,13 @@ export const HomeView = () => {
             </Button>
           </ListItem>
         </List>
+        <List>
+          <ListItem style={{ display: "flex", justifyContent: "center" }}>
+            <Button onClick={() => navigate("/missing-lyrics/arttu-wiskari")}>
+              Arttu Wiskari
+            </Button>
+          </ListItem>
+        </List>
         <Typography variant="h6" sx={{ color: "#ffff", marginTop: "2em" }}>
           Melodian avulla arvattavat biisit
         </Typography>

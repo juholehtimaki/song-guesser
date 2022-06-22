@@ -69,6 +69,12 @@ function App() {
           }
         />
         <Route
+          path="/missing-lyrics/arttu-wiskari"
+          element={
+            <GuessMissingWord key="missing-missing" gameData={arttuwiskari} />
+          }
+        />
+        <Route
           path="/audio/random"
           element={<GuessByAudio key="audio" gameData={soundgamedata} />}
         />
