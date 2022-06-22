@@ -71,7 +71,7 @@ function App() {
         <Route
           path="/missing-lyrics/arttu-wiskari"
           element={
-            <GuessMissingWord key="missing-missing" gameData={arttuwiskari} />
+            <GuessMissingWord key="arttu-missing" gameData={arttuwiskari} />
           }
         />
         <Route
